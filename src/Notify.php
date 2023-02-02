@@ -120,6 +120,6 @@ class Notify
     protected function getDriverInstance()
     {
         $class = $this->config['map'][$this->method][$this->driver];
-        return new $class($this->config);
+        return new $class($this->settings);
     }
 }
