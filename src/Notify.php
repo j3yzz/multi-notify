@@ -1,6 +1,6 @@
 <?php
 
-namespace j3yzz\MultiNotif;
+namespace j3yzz\MultiNotify;
 
 class Notify
 {
