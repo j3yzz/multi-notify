@@ -35,7 +35,10 @@ return [
      */
     'drivers' => [
         'sms' => [
-
+            'kavenegar' => [
+                'apiKey' => '',
+                'from' => '',
+            ]
         ],
         'mail' => [
 
@@ -51,7 +54,7 @@ return [
      */
     'map' => [
         'sms' => [
-
+            'kavenegar' => \j3yzz\MultiNotify\Drivers\Kavenegar::class,
         ],
         'mail' => [
 
