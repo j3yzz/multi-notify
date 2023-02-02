@@ -24,7 +24,7 @@ class MultiNotifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->bind('notify', function () {
+        $this->app->bind('multi-notify', function () {
             return new Notify(config('multi-notify'));
         });
     }

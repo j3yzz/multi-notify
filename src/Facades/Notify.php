@@ -1,6 +1,6 @@
 <?php
 
-namespace j3yzz\MultiNotify\Facade;
+namespace j3yzz\MultiNotify\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Notify extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'notify';
+        return 'multi-notify';
     }
 }
