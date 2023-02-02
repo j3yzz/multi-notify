@@ -1,0 +1,25 @@
+{
+    "name": "j3yzz/multi-notif",
+    "description": "Laravel SMS Multi-Driver Package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "J3yzz\\MultiNotif\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amirreza Kheradmand",
+            "email": "amirreza_khmd@outlook.com",
+            "role": "Developer",
+            "homepage": "https://github.com/j3yzz"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/http": "^9.0",
+        "illuminate/support": "^9.0",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
