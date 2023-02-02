@@ -99,6 +99,16 @@ class Notify
         return $driver->send();
     }
 
+    public function sendBulk($message)
+    {
+        $this->builder->sendBulk($message);
+
+        $driver = $this->getDriverInstance();
+        $driver->message($message);
+
+        return $driver->sendBulk();
+    }
+
     /**
      * @return Builder
      */
