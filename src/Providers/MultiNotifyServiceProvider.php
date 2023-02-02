@@ -14,7 +14,7 @@ class MultiNotifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../config/multi-notify.php', 'multi-notify');
     }
 
     /**
@@ -25,7 +25,7 @@ class MultiNotifyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->app->bind('notify', function () {
-            return new Notify();
+            return new Notify(config('multi-notify'));
         });
     }
 }
