@@ -31,6 +31,16 @@ class Notify
     protected Builder $builder;
 
     /**
+     * @var string
+     */
+    protected string $method;
+
+    /**
+     * @var array
+     */
+    protected array $settings;
+
+    /**
      * @param array $config
      */
     public function __construct(array $config)
@@ -40,19 +50,27 @@ class Notify
 
     /**
      * @param string $method
+     * @return Notify
      * @throws \Exception
      */
-    public function method(string $method): void
+    public function method(string $method): self
+
     {
         if (!in_array($method, self::METHODS)) {
             throw new \Exception('This method is not allowed!');
         }
+
+        $this->method = $method;
 
         if ($method == self::METHOD_MAIL) {
             $this->builder = new MailBuilder();
         } else {
             $this->builder = new SmsBuilder();
         }
+
+        $this->via($this->config["{$this->method}_default_driver"]);
+
+        return $this;
     }
 
     public function to($recipients): self
@@ -66,6 +84,7 @@ class Notify
     {
         $this->driver = $driver;
         $this->builder->via($driver);
+        $this->settings = $this->config['drivers'][$this->method][$driver];
 
         return $this;
     }
@@ -73,6 +92,11 @@ class Notify
     public function send($message)
     {
         $this->builder->send($message);
+
+        $driver = $this->getDriverInstance();
+        $driver->message($message);
+
+        return $driver->send();
     }
 
     /**
@@ -81,5 +105,11 @@ class Notify
     public function getBuilder(): Builder
     {
         return $this->builder;
+    }
+
+    protected function getDriverInstance()
+    {
+        $class = $this->config['map'][$this->method][$this->driver];
+        return new $class($this->config);
     }
 }
