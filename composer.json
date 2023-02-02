@@ -1,6 +1,6 @@
 {
     "name": "j3yzz/multi-notif",
-    "description": "Laravel SMS Multi-Driver Package",
+    "description": "Laravel Notification Integration Package",
     "type": "library",
     "license": "MIT",
     "autoload": {
