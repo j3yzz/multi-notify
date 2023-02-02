@@ -2,9 +2,9 @@
 
 namespace j3yzz\MultiNotify;
 
-use j3yzz\MultiNotify\Builders\Contract\Builder;
 use j3yzz\MultiNotify\Builders\MailBuilder;
 use j3yzz\MultiNotify\Builders\SmsBuilder;
+use j3yzz\MultiNotify\Contracts\Builder;
 
 class Notify
 {

@@ -2,7 +2,7 @@
 
 namespace j3yzz\MultiNotify\Builders;
 
-use j3yzz\MultiNotify\Builders\Contract\Builder;
+use j3yzz\MultiNotify\Contracts\Builder;
 
 class MailBuilder implements Builder
 {

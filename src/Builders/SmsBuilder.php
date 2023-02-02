@@ -3,7 +3,7 @@
 namespace j3yzz\MultiNotify\Builders;
 
 use Illuminate\Support\Arr;
-use j3yzz\MultiNotify\Builders\Contract\Builder;
+use j3yzz\MultiNotify\Contracts\Builder;
 
 /**
  *

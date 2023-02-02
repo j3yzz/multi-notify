@@ -1,6 +1,6 @@
 <?php
 
-namespace j3yzz\MultiNotify\Builders\Contract;
+namespace j3yzz\MultiNotify\Contracts;
 
 interface Builder
 {
